@@ -448,10 +448,8 @@ def main():
         _logger.info('Scheduled epochs: {}'.format(num_epochs))
 
     # create the train and eval datasets
-    dataset_train = create_dataset(
-        args.dataset, root=args.data_dir, split=args.train_split, is_training=True, batch_size=args.batch_size)
-    dataset_eval = create_dataset(
-        args.dataset, root=args.data_dir, split=args.val_split, is_training=False, batch_size=args.batch_size)
+    dataset_train = create_dataset(args.dataset, root=args.data_dir, split=args.train_split, is_training=True, batch_size=args.batch_size)
+    dataset_eval = create_dataset(args.dataset, root=args.data_dir, split=args.val_split, is_training=False, batch_size=args.batch_size)
 
     # setup mixup / cutmix
     collate_fn = None
